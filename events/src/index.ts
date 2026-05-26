@@ -7,12 +7,11 @@ export const EVENT_SPEC_VERSION = "1.0" as const;
 
 export type EventSource =
   | "iag.erp"
-  | "iag.accounts"
+  | "iag.users"
   | "iag.inventory"
   | "iag.warehouse"
   | "iag.notifications"
   | "iag.authentication"
-  | "iag.accounts"
   | "iag.pos"
   | "iag.fleet"
   | "iag.federation"
