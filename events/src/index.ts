@@ -78,6 +78,17 @@ export const procurementEventTypes = {
   pmRequisitionSubmitted: pmEventTypes.requisitionSubmitted,
 } as const;
 
+/** Contract management domain events (publishers: iag-contract-management). */
+export const contractsEventTypes = {
+  contractCreated: "contracts.contract.created",
+  contractUpdated: "contracts.contract.updated",
+  contractDeleted: "contracts.contract.deleted",
+  contractStatusChanged: "contracts.contract.status_changed",
+  assistanceRequested: "contracts.assistance.requested",
+  milestoneDueSoon: "contracts.milestone.due_soon",
+  alertRaised: "contracts.alert.raised",
+} as const;
+
 /** Fleet domain events (publishers: iag-fleet). */
 export const fleetEventTypes = {
   vehicleStatusChanged: "fleet.vehicle.status_changed",
