@@ -105,6 +105,15 @@ export const financeEventTypes = {
   saleCompleted: "sale.completed",
   invoicePosted: "invoice.posted",
   fleetFuelRecorded: "fleet.fuel.recorded",
+  paymentReceived: "payment.received",
+  paymentDisbursed: "payment.disbursed",
+  invoiceApproved: "finance.invoice.approved",
+  efrisSubmitted: "finance.efris.submitted",
+} as const;
+
+/** Procurement events consumed by iag-finance on iag.commercial. */
+export const procurementFinanceEventTypes = {
+  invoiceReceived: "procurement.invoice.received",
 } as const;
 
 /** Starter catalog — extend per service as APIs are implemented */
