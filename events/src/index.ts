@@ -91,6 +91,9 @@ export const contractsEventTypes = {
 
 /** Fleet domain events (publishers: iag-fleet). */
 export const fleetEventTypes = {
+  vehicleCreated: "fleet.vehicle.created",
+  vehicleUpdated: "fleet.vehicle.updated",
+  vehicleDeleted: "fleet.vehicle.deleted",
   vehicleStatusChanged: "fleet.vehicle.status_changed",
   jmpCompleted: "fleet.jmp.completed",
   cargoStageAdvanced: "fleet.cargo.stage_advanced",
