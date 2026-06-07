@@ -12,6 +12,48 @@ export interface FleetClientOptions {
   fetch?: typeof fetch;
 }
 
+/** Static vehicle registry row (camelCase JSON from Fleet API). */
+export interface FleetVehicle {
+  id: string;
+  plate: string;
+  type: string;
+  make: string;
+  model: string;
+  year: number;
+  vehicleClass: string;
+  ownership: string;
+  vin?: string;
+  color?: string;
+  seatCapacity?: number;
+  transmission?: string;
+  engineCapacity?: string;
+  driveHand?: string;
+  purchaseDate?: string;
+  /** Odometer at purchase / registration (distinct from live telemetry `odo`). */
+  mileage?: number;
+  driverId?: string;
+  status: string;
+  location: string;
+  lat: number;
+  lng: number;
+  heading: number;
+  fuel: number;
+  odo: number;
+  capacity: string;
+  cargo?: string;
+  lastSeen: string;
+  telematics?: string;
+  fuelTracker: boolean;
+  dashcam?: boolean;
+  nextServiceKm: number;
+  speed: number;
+  engineHours?: number;
+  purpose?: string;
+  mechStatus: string;
+  alert?: string;
+  tankCapacityLitres?: number;
+}
+
 export interface FleetUserMe {
   mode: "platform";
   user: {
@@ -66,8 +108,8 @@ export class FleetClient {
     return this.request<FleetUserMe>("/users/me");
   }
 
-  listVehicles(): Promise<unknown> {
-    return this.request("/vehicles");
+  listVehicles(): Promise<FleetVehicle[]> {
+    return this.request<FleetVehicle[]>("/vehicles");
   }
 
   markNotificationSeen(id: string): Promise<void> {
