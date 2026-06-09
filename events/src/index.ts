@@ -89,6 +89,19 @@ export const contractsEventTypes = {
   alertRaised: "contracts.alert.raised",
 } as const;
 
+/** Warehouse domain events (publishers: iag-warehouse on iag.operations). */
+export const warehouseEventTypes = {
+  receiptPosted: "warehouse.receipt.posted",
+  issuePosted: "warehouse.issue.posted",
+  transferCompleted: "warehouse.transfer.completed",
+  productionConsumed: "warehouse.production.consumed",
+  productionOutput: "warehouse.production.output",
+  pickConfirmed: "warehouse.pick.confirmed",
+  assetCheckedOut: "warehouse.asset.checked_out",
+  stockBelowMinimum: "warehouse.stock.below_minimum",
+  movementPosted: "warehouse.movement.posted",
+} as const;
+
 /** Fleet domain events (publishers: iag-fleet). */
 export const fleetEventTypes = {
   vehicleCreated: "fleet.vehicle.created",
